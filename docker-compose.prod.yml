@@ -1,0 +1,38 @@
+name: trellis
+
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../Dockerfile.backend
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --workers 4
+    volumes: []
+    restart: always
+    environment:
+      ENVIRONMENT: production
+
+  worker:
+    command: celery -A backend.workers.celery worker --loglevel=warning --concurrency 4
+    volumes: []
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+    image: node:20-alpine
+    working_dir: /app
+    command: node server.js
+    volumes: []
+    restart: always
+
+  db:
+    restart: always
+
+  redis:
+    restart: always
