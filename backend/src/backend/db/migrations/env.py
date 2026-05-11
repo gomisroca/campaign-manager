@@ -18,6 +18,11 @@ import backend.models.user        # noqa: F401
 import backend.models.org         # noqa: F401
 import backend.models.membership  # noqa: F401
 import backend.models.invite      # noqa: F401
+import backend.models.campaign    # noqa: F401
+import backend.models.session     # noqa: F401
+import backend.models.character   # noqa: F401
+import backend.models.campaign_extras  # noqa: F401
+
 
 target_metadata = Base.metadata
 
