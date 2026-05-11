@@ -69,8 +69,8 @@ class Settings(BaseSettings):
 
     # ── Email (Resend) ────────────────────────────────────────────────────────
     resend_api_key: str = ""
-    email_from_address: str = "noreply@trellis.com"
-    email_from_name: str = "Trellis"
+    email_from_address: str = "noreply@dnd.com"
+    email_from_name: str = "Campaign Manager"
 
     @property
     def email_enabled(self) -> bool:

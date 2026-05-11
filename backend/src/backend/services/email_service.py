@@ -41,7 +41,7 @@ def _invite_html(org_name: str, inviter_email: str, role: str, invite_url: str, 
 
     <!-- Header -->
     <div style="background: #18181b; padding: 24px 32px;">
-      <h1 style="color: white; margin: 0; font-size: 20px; font-weight: 600;">Trellis</h1>
+      <h1 style="color: white; margin: 0; font-size: 20px; font-weight: 600;">Campaign Manager</h1>
     </div>
 
     <!-- Body -->
@@ -67,7 +67,7 @@ def _invite_html(org_name: str, inviter_email: str, role: str, invite_url: str, 
     <!-- Footer -->
     <div style="padding: 16px 32px; border-top: 1px solid #f3f4f6;">
       <p style="margin: 0; color: #9ca3af; font-size: 12px;">
-        Sent by Trellis · If the button doesn't work, copy this link: {invite_url}
+        Sent by Campaign Manager · If the button doesn't work, copy this link: {invite_url}
       </p>
     </div>
 
@@ -86,6 +86,6 @@ def send_invite_email(
 ) -> None:
     _send(
         to=to,
-        subject=f"You've been invited to join {org_name} on Trellis",
+        subject=f"You've been invited to join {org_name} on Campaign Manager",
         html=_invite_html(org_name, inviter_email, role, invite_url),
     )

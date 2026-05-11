@@ -10,8 +10,8 @@ const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Trellis",
-    template: "%s | Trellis",
+    default: "Campaign Manager",
+    template: "%s | Campaign Manager",
   },
   description: "Multi-tenant SaaS starter — built to be extended and shipped.",
 };

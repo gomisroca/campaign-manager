@@ -1,4 +1,4 @@
-name: trellis
+name: Campaign Manager
 
 # Usage:
 #   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
