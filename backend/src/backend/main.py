@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.api.v1 import auth, orgs, invites, billing, oauth
+from backend.api.v1 import auth, orgs, invites, billing, oauth, campaigns
 from backend.config import get_settings
 from backend.db.session import engine, Base
 
@@ -45,6 +45,7 @@ app.include_router(orgs.router, prefix="/api/v1")
 app.include_router(invites.router, prefix="/api/v1")
 app.include_router(billing.router, prefix="/api/v1")
 app.include_router(oauth.router, prefix="/api/v1")
+app.include_router(campaigns.router, prefix="/api/v1")
 
 
 # ── Health check ─────────────────────────────────────────────────────────────
